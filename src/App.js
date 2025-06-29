@@ -1,10 +1,39 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
-import Header from './components/Header'; // Import our Header component
-import ProjectSections from './components/ProjectSections'; // Import our ProjectSections component
+import Header from './components/Header';
+import ProjectSections from './components/ProjectSections';
+import Project from './components/Project';
 
 // This is your main App component - like your main class in C#
 function App() {
+  const [currentView, setCurrentView] = useState('home'); // 'home' or 'project'
+  const [selectedProject, setSelectedProject] = useState(null);
+
+  // Function to handle project selection
+  const handleProjectSelect = (projectData) => {
+    setSelectedProject(projectData);
+    setCurrentView('project');
+  };
+
+  // Function to go back to home
+  const handleBackToHome = () => {
+    setCurrentView('home');
+    setSelectedProject(null);
+  };
+
+  // If viewing a project, show the project page
+  if (currentView === 'project') {
+    return (
+      <div className="App">
+        <Project 
+          projectData={selectedProject} 
+          onBack={handleBackToHome}
+        />
+      </div>
+    );
+  }
+
+  // Otherwise, show the main portfolio page
   return (
     <div className="App">
       {/* Use our Header component - it's like instantiating a class */}
@@ -12,46 +41,11 @@ function App() {
       
       {/* Main content area */}
       <main className="main-content">
-        <section id="home" className="hero-section">
-          <div className="hero-container">
-            <div className="hero-content">
-              <h1 className="hero-title">Welcome to My Portfolio</h1>
-              <p className="hero-subtitle">Game Developer | Unity Specialist | Creative Problem Solver</p>
-              <p className="hero-description">
-                Passionate about creating immersive gaming experiences and innovative tools. 
-                Explore my latest projects, game development work, and artistic creations.
-              </p>
-              <div className="hero-buttons">
-                <a href="#recent-work" className="btn btn-primary">View My Work</a>
-                <a href="#resume" className="btn btn-secondary">Download Resume</a>
-              </div>
-            </div>
-          </div>
-        </section>
         
-        {/* Project Sections */}
-        <ProjectSections />
         
-        <section id="github" className="section">
-          <div className="container">
-            <h1>GitHub Projects</h1>
-            <p>This section will showcase your GitHub repositories and coding projects.</p>
-          </div>
-        </section>
+        {/* Project Sections - now with project selection handler */}
+        <ProjectSections onProjectSelect={handleProjectSelect} />
         
-        <section id="art-station" className="section">
-          <div className="container">
-            <h1>Art Station</h1>
-            <p>Display your artwork, 3D models, and creative projects here.</p>
-          </div>
-        </section>
-        
-        <section id="resume" className="section">
-          <div className="container">
-            <h1>Resume</h1>
-            <p>Your professional experience, education, and skills will go here.</p>
-          </div>
-        </section>
       </main>
     </div>
   );

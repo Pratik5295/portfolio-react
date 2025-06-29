@@ -1,5 +1,5 @@
 import React from 'react';
-import './ProjectCard.css';
+import '../styles/ProjectCard.css';
 
 // Reusable ProjectCard component - like a class you can instantiate multiple times
 const ProjectCard = ({ 

@@ -1,5 +1,5 @@
 import React from 'react';
-import './Header.css';
+import '../styles/Header.css';
 
 // This is a functional component - like a method that returns JSX
 const Header = () => {
