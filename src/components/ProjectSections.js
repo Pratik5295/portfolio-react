@@ -2,105 +2,12 @@ import React from 'react';
 import ProjectCard from './ProjectCard';
 import '../styles/ProjectSections.css';
 
+// Import project data from separate files
+import { recentProjects } from '../data/recentProjects';
+import { gameProjects } from '../data/gameProjects';
+import { artProjects } from '../data/artProjects';
+
 const ProjectSections = ({ onProjectSelect }) => {
-  // Sample data - you can replace with real project data later
-  const recentProjects = [
-    {
-      id: 'custom-dialogue-tool',
-      title: "Custom Dialogue Tool",
-      subtitle: "Unity",
-      technologies: ["Unity Tool", "Dialogue System", "Custom Editor"],
-      description: "A comprehensive dialogue system with custom editor for Unity game development. This tool streamlines the process of creating complex branching dialogues for narrative-driven games, featuring an intuitive node-based editor and runtime dialogue manager."
-      +"\n Each dialogue message comprises of Speaker Name, message, Unique Ids and Dialogue Options. Drag and drop connections via nodes or their option nodes to form a dialogue tree. ",
-      category: "Tool Development",
-      duration: "2 months",
-      status: "Completed",
-      videoUrl: "https://drive.google.com/file/d/1KMcEGNsGffncaiMEq6sDTxCMmPlU0L1a/preview",
-      highlights: [
-        "Node Editor for creating and managing dialogue trees",
-        "Scriptable Objects creations for dialogue data management",
-        "JSON file support for easy data import/export",
-        "Branching conversation support with conditional logic"
-      ]
-    },
-    {
-      id: 'detective-game',
-      title: "Detective Game",
-      subtitle: "Unity",
-      technologies: ["Third Person", "Narrative", "Puzzle Solving", "Shooting"],
-      description: "An immersive detective game featuring investigation mechanics and story-driven gameplay. Players take on the role of a seasoned detective solving complex cases through evidence collection, witness interviews, and deductive reasoning.",
-      category: "Game Development",
-      duration: "6 months",
-      status: "In Development",
-      videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
-      highlights: [
-        "Third-person investigation mechanics with intuitive controls",
-        "Complex narrative branching based on player choices",
-        "Evidence collection system with interactive crime scenes",
-        "Interactive dialogue system with multiple conversation paths",
-        "Atmospheric environment design creating immersive crime scenes"
-      ]
-    },
-    {
-      id: 'hell-shift',
-      title: "A Hell Shift",
-      subtitle: "Unity",
-      technologies: ["Point-and-Click", "Work Simulator", "Puzzles", "Game Studio"],
-      description: "A unique work simulation game with puzzle elements and engaging gameplay mechanics. Experience the chaos of a demanding workplace through humor-driven storytelling and challenging puzzle-based progression.",
-      category: "Game Development",
-      duration: "4 months",
-      status: "Completed",
-      videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
-      highlights: [
-        "Point-and-click interface optimized for desktop and mobile",
-        "Work simulation mechanics reflecting real workplace challenges",
-        "Puzzle-based progression system with increasing complexity",
-        "Humor-driven narrative with relatable workplace scenarios",
-        "Multiple ending system based on player performance and choices"
-      ]
-    }
-  ];
-
-  // Generate game projects (3x4 grid = 12 projects) with unique IDs
-  const gameProjects = Array.from({ length: 12 }, (_, index) => ({
-    id: `game-project-${index + 1}`,
-    title: `Project A${index + 1}`,
-    subtitle: "Game Development",
-    technologies: ["Unity", "C#", "Game Design"],
-    description: `This is a comprehensive game development project showcasing advanced Unity techniques and creative problem-solving. Project A${index + 1} demonstrates proficiency in multiple aspects of game development including gameplay mechanics, user interface design, and performance optimization.`,
-    category: "Game Development",
-    duration: "3 months",
-    status: "Completed",
-    videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
-    highlights: [
-      "Innovative gameplay mechanics that enhance player engagement",
-      "Polished user interface with intuitive navigation and feedback",
-      "Optimized performance across multiple platforms and devices",
-      "Cross-platform compatibility ensuring broad accessibility",
-      "Engaging player experience with balanced difficulty progression"
-    ]
-  }));
-
-  // Generate art projects (3x2 grid = 6 projects) with unique IDs
-  const artProjects = Array.from({ length: 6 }, (_, index) => ({
-    id: `art-project-${index + 1}`,
-    title: `Art Project A${index + 1}`,
-    subtitle: "Digital Art",
-    technologies: ["3D Modeling", "Texturing", "Animation"],
-    description: `A sophisticated digital art project showcasing advanced 3D modeling and animation techniques. Art Project A${index + 1} demonstrates mastery of industry-standard tools and creative vision in digital content creation.`,
-    category: "Digital Art",
-    duration: "1 month",
-    status: "Completed",
-    videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
-    highlights: [
-      "High-quality 3D modeling with attention to detail and accuracy",
-      "Realistic texturing work using industry-standard techniques",
-      "Smooth animation sequences with natural movement and timing",
-      "Creative concept design showcasing original artistic vision",
-      "Professional presentation suitable for portfolio and client work"
-    ]
-  }));
-
   // Handle card click - call the parent's project selection handler
   const handleCardClick = (project) => {
     console.log('Selected project:', project.title);

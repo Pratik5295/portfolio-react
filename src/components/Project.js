@@ -95,6 +95,20 @@ const Project = ({ projectData, onBack }) => {
           </div>
         </section>
 
+         {/* Custom HTML Section - Only for Custom Dialogue Tool */}
+        {project.customHTML && (
+          <section className="project-custom-section">
+            <div className="container">
+              <h2 className="section-title">Custom Features</h2>
+              <div className="section-divider"></div>
+              <div 
+                className="custom-content"
+                dangerouslySetInnerHTML={{ __html: project.customHTML }}
+              />
+            </div>
+          </section>
+        )}
+
         {/* Back Navigation */}
         <section className="project-navigation">
           <div className="container">
