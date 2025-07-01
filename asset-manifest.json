@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/Pratik5295/portfolio-react/static/css/main.d027f465.css",
-    "main.js": "/Pratik5295/portfolio-react/static/js/main.e5651ce4.js",
+    "main.js": "/Pratik5295/portfolio-react/static/js/main.1f2add73.js",
     "static/js/453.ffd317f4.chunk.js": "/Pratik5295/portfolio-react/static/js/453.ffd317f4.chunk.js",
     "index.html": "/Pratik5295/portfolio-react/index.html",
     "main.d027f465.css.map": "/Pratik5295/portfolio-react/static/css/main.d027f465.css.map",
-    "main.e5651ce4.js.map": "/Pratik5295/portfolio-react/static/js/main.e5651ce4.js.map",
+    "main.1f2add73.js.map": "/Pratik5295/portfolio-react/static/js/main.1f2add73.js.map",
     "453.ffd317f4.chunk.js.map": "/Pratik5295/portfolio-react/static/js/453.ffd317f4.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.d027f465.css",
-    "static/js/main.e5651ce4.js"
+    "static/js/main.1f2add73.js"
   ]
 }
