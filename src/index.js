@@ -1,16 +1,25 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './index.css';
 import App from './App';
+import ProjectDialogueTool from './projects/game-projects/DialogueTool.js';
+import ProjectDetectiveGame from './projects/game-projects/DetectiveGame.js';
+
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+      <Routes>
+        <Route path="/home" element={<App />} />
+        <Route path="/dialogue-tool" element={<ProjectDialogueTool />} />
+        <Route path="/detective-game" element={<ProjectDetectiveGame />} />
+      </Routes>
+    </BrowserRouter>
   </React.StrictMode>
 );
-
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
