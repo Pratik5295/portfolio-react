@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-
+import Navigation from './components/Navigation';
 
 import './App.css'; //Importing CSS for styling
 
@@ -8,8 +8,8 @@ import './App.css'; //Importing CSS for styling
 function App() {
   return (
     <div classname="app">
-      <header classname = "header"> Pratik Shringarpure </header>
-
+  <Navigation/>
+  
     <section className="projects-section">
         <h2 className="section-title">Projects</h2>
         <div className="project-list">

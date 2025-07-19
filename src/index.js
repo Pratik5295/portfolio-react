@@ -13,7 +13,7 @@ root.render(
   <React.StrictMode>
     <BrowserRouter>
       <Routes>
-        <Route path="/home" element={<App />} />
+        <Route path="/Pratik5295/portfolio-react" element={<App />} />
         <Route path="/dialogue-tool" element={<ProjectDialogueTool />} />
         <Route path="/detective-game" element={<ProjectDetectiveGame />} />
       </Routes>
